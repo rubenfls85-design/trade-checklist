@@ -1,0 +1,26 @@
+:root { font-family: system-ui, Arial, sans-serif; }
+body { margin: 0; background: #f6f7fb; color: #111; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 18px; }
+h1 { margin: 10px 0 4px; }
+.sub { margin: 0 0 14px; color: #444; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card { background: #fff; border: 1px solid #e6e8ef; border-radius: 12px; padding: 14px; box-shadow: 0 1px 6px rgba(0,0,0,.04); }
+.check { display:block; padding: 6px 0; }
+.row { display:grid; grid-template-columns: 200px 1fr; gap: 10px; align-items:center; margin: 8px 0; }
+input, textarea, select { width: 100%; padding: 8px; border: 1px solid #ccd2df; border-radius: 8px; }
+.btnrow { display:flex; gap: 10px; flex-wrap: wrap; }
+button { padding: 10px 14px; border: 0; border-radius: 10px; background: #111; color: #fff; cursor:pointer; }
+button.secondary { background: #e9ecf4; color: #111; }
+.note { margin-top: 10px; padding: 10px; border-radius: 10px; background: #fff7cc; border: 1px solid #f1e08a; }
+.calc { margin-top: 12px; padding: 12px; border-radius: 12px; border: 1px dashed #cbd3e5; background: #fafbff; }
+output { display:block; padding: 8px; background: #f0f3ff; border-radius: 8px; border: 1px solid #d5dcff; }
+.tiny { font-size: 12px; color: #555; }
+.foot { color:#555; font-size: 13px; }
+@media (max-width: 900px){ .grid { grid-template-columns: 1fr; } .row { grid-template-columns: 1fr; } }
+@media print{
+  body { background:#fff; }
+  button { display:none; }
+  .card { box-shadow:none; }
+}.inline { display:flex; gap: 10px; align-items:center; }
+.sep { color:#666; font-size: 13px; }
+.inline input { max-width: 110px; }

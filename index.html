@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Short-Term Trade Checklist</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>Short-Term Trade Checklist (1–30 Days)</h1>
+    <p class="sub">Momentum setup + risk plan. Simple, printable, and saved.</p>
+    <div class="btnrow">
+      <button id="btnSave">Save</button>
+      <button id="btnReset" class="secondary">Reset</button>
+      <button id="btnPrint" class="secondary">Print</button>
+    </div>
+  </header>
+
+  <main class="wrap grid">
+    <section class="card">
+      <h2>1) Stock Qualification</h2>
+
+      <label class="check"><input type="checkbox" id="c_volume"> Unusual volume (2×+ average)</label>
+      <label class="check"><input type="checkbox" id="c_catalyst"> Clear catalyst (earnings/news/upgrade)</label>
+      <label class="check"><input type="checkbox" id="c_ma"> Price above 50-day MA</label>
+      <label class="check"><input type="checkbox" id="c_trend"> Higher highs & higher lows</label>
+      <label class="check"><input type="checkbox" id="c_rsi"> RSI 40–70</label>
+      <label class="check"><input type="checkbox" id="c_beta"> Beta 1.2–2.5</label>
+
+      <div class="note">
+        <strong>Rule:</strong> If every box isn’t checked and your exit isn’t defined before entry — don’t trade.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2) Entry Plan</h2>
+      <div class="row">
+        <label>Stock/Ticker</label>
+        <input id="ticker" placeholder="e.g., XYZ" />
+      </div>
+      <div class="row">
+        <label>Resistance / Breakout Level</label>
+        <input id="breakout" placeholder="e.g., 50.00" />
+      </div>
+      <div class="row">
+        <label>Planned Entry Price</label>
+        <input id="entry" placeholder="e.g., 50.20" />
+      </div>
+      <div class="row">
+        <label>Volume Confirmation</label>
+        <select id="volconfirm">
+          <option value="">Select…</option>
+          <option>YES</option>
+          <option>NO</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="card">
+  <h2>3) Risk Management</h2>
+
+  <label class="check" style="margin-bottom:8px;">
+    <input type="checkbox" id="autocalc" checked>
+    Auto-calculate Stop/Target from Entry
+  </label>
+
+  <div class="row">
+    <label>Stop % (min / max)</label>
+    <div class="inline">
+      <input id="stopMinPct" placeholder="3" value="3" />
+      <span class="sep">to</span>
+      <input id="stopMaxPct" placeholder="7" value="7" />
+    </div>
+  </div>
+
+  <div class="row">
+    <label>Take Profit % (min / max)</label>
+    <div class="inline">
+      <input id="tpMinPct" placeholder="5" value="5" />
+      <span class="sep">to</span>
+      <input id="tpMaxPct" placeholder="15" value="15" />
+    </div>
+  </div>
+
+  <div class="row">
+    <label>Stop Loss (auto = min %)</label>
+    <input id="stop" placeholder="e.g., 48.50" />
+  </div>
+
+  <div class="row">
+    <label>Take Profit (auto = min %)</label>
+    <input id="target" placeholder="e.g., 54.00" />
+  </div>
+
+  <div class="note" id="rangeNote">
+    Enter an Entry Price above, then this will show your Stop/Target range.
+  </div>
+
+  <div class="row">
+    <label>Notes</label>
+    <textarea id="notes" rows="5" placeholder="Why this trade? What’s the catalyst?"></textarea>
+  </div>
+
+  <div class="calc">
+    <h3>Quick Risk Calculator (Optional)</h3>
+    <div class="row">
+      <label>Account Size ($)</label>
+      <input id="acct" placeholder="e.g., 2000" />
+    </div>
+    <div class="row">
+      <label>Risk % (per trade)</label>
+      <input id="riskpct" placeholder="e.g., 1" />
+    </div>
+    <div class="row">
+      <label>Max $ Risk</label>
+      <output id="maxrisk">$0.00</output>
+    </div>
+    <div class="row">
+      <label>Est. Shares (based on Entry & Stop)</label>
+      <output id="shares">0</output>
+    </div>
+    <p class="tiny">This is educational math only — not financial advice.</p>
+  </div>
+</section>
+
+    <section class="card">
+      <h2>Side Notes (Beginner Definitions)</h2>
+      <details open>
+        <summary><strong>MA (Moving Average)</strong></summary>
+        <p>Average price over a set number of days. Price above the 50-day MA usually means the short-term trend is up.</p>
+      </details>
+      <details>
+        <summary><strong>RSI</strong></summary>
+        <p>0–100 “heat gauge.” 40–70 is healthy momentum. Above ~80 can mean too hot (pullback risk).</p>
+      </details>
+      <details>
+        <summary><strong>Beta</strong></summary>
+        <p>How fast it moves vs the market. ~1.0 moves like the market. 1.2–2.5 moves enough for short-term trades.</p>
+      </details>
+
+      <h3>Filled Example (Reference)</h3>
+      <ul>
+        <li><strong>Ticker:</strong> XYZ</li>
+        <li><strong>Breakout:</strong> 50.00</li>
+        <li><strong>Entry:</strong> 50.20</li>
+        <li><strong>Stop:</strong> 48.50</li>
+        <li><strong>Target:</strong> 54.00</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>Built for your personal process. Keep it simple. Follow your stops.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
